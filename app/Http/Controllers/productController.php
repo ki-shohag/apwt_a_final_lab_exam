@@ -53,16 +53,16 @@ class productController extends Controller
         }
     }
 
-    public function deleteUser(Request $req, $id)
+    public function deleteProduct(Request $req, $id)
     {
-        $user = User::find($id);
-        if ($user) {
-            $user->delete();
-            $req->session()->flash('msg', 'User Deleted!');
-            return redirect('/manage-user');
+        $product = Product::find($id);
+        if ($product) {
+            $product->delete();
+            $req->session()->flash('msg', 'Product Deleted!');
+            return redirect('/manage-product');
         } else {
-            $req->session()->flash('msg', 'User Not Found!');
-            return redirect('/manage-user');
+            $req->session()->flash('msg', 'Product Not Found!');
+            return redirect('/manage-product');
         }
     }
 
