@@ -23,7 +23,7 @@ class productController extends Controller
                         $product->name = $req->name;
                         $product->quantity = $req->quantity;
                         $product->price = $req->price;
-                        
+
                         if ($product->save()) {
                             $req->session()->flash('msg', 'Product Added!');
                             return redirect('/manage-product');
@@ -32,10 +32,10 @@ class productController extends Controller
                         }
     }
 
-    public function editUser(Request $req, $id)
+    public function editProduct(Request $req, $id)
     {
-        $user = User::find($id);
-        return view('edit')->with('user', $user);
+        $product = Product::find($id);
+        return view('editProduct')->with('product', $product);
     }
 
     public function updateUser(Request $req, $id)
