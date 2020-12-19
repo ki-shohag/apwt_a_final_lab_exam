@@ -7,6 +7,7 @@ use App\Http\Controllers\logoutController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\signupController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\employeeHomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,7 @@ Route::get('/', function () {
 
 Route::group(['middleware'=>['sess']], function () {
     Route::get('/home', [homeController::class, 'index']);
+    Route::get('/employeeHome', [employeeHomeController::class, 'index']);
     Route::get('/manage-user', [userController::class, 'index']);
     Route::post('/manage-user/insert', [userController::class, 'storeUser']);
     Route::get('/manage-user/edit/{id}', [userController::class, 'editUser']);

@@ -20,7 +20,12 @@ class loginController extends Controller
         if(isset($user['user_name']) ){
             $req->session()->put('user_name', $user['user_name']);
             $req->session()->put('type', $user['type']);
-            return redirect('/home');
+            if($user['type']==2){
+                return redirect('/home');
+            }
+            else if($user['type']==1){
+                return redirect('/employeeHome');
+            }
         }
         else{
     		$req->session()->flash('msg', 'invalid username/password');

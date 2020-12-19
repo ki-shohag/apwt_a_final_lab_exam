@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Employee Home</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
@@ -32,7 +32,7 @@
                 </tr>
             </table><br><br>
             <div class="text-center">
-                <a class="btn btn-success btn-block btn-sm" href="/manage-user">Manage Users</a>
+                <a class="btn btn-success btn-block btn-sm" href="/manage-user">Manage Products</a>
                 <a class="btn btn-danger btn-block btn-sm" href="/logout">Logout</a>
             </div>
         </div>
