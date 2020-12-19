@@ -32,7 +32,7 @@
                 </tr>
             </table><br><br>
             <div class="text-center">
-                <a class="btn btn-success btn-block btn-sm" href="/manage-user">Manage Products</a>
+                <a class="btn btn-success btn-block btn-sm" href="/manage-product">Manage Products</a>
                 <a class="btn btn-danger btn-block btn-sm" href="/logout">Logout</a>
             </div>
         </div>
