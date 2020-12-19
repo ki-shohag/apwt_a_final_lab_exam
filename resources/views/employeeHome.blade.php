@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-4">
             <div class="text-center">
-            <h1>Welcome, {{$user['user_name']}}</h1><br><br>
+            <h1>Welcome Employee, {{$user['user_name']}}</h1><br><br>
             </div>
 
             <table class="table table-hover table-bordered">
@@ -21,10 +21,6 @@
                 <tr>
                     <td>User Name: </td>
                     <td>{{$user['user_name']}}</td>
-                </tr>
-                <tr>
-                    <td>Company Name: </td>
-                    <td>{{$user['company_name']}}</td>
                 </tr>
                 <tr>
                     <td>Phone: </td>

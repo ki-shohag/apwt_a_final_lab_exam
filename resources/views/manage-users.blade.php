@@ -41,12 +41,9 @@
                 <div class="modal-body">
                   <input type="text" name="full_name" value="" class="form-control" placeholder="Full Name"><br>
                   <input type="text" name="user_name" value="" class="form-control" placeholder="User Name"><br>
-                  <input type="email" name="email" value="" class="form-control" placeholder="Email"><br>
                   <input type="number" name="phone" value="" class="form-control" placeholder="Phone"><br>
-                  <input type="text" name="company_name" value="" class="form-control" placeholder="Compnay Name"><br>
                   <input type="password" name="password" value="" class="form-control" placeholder="Password"><br>
                   <input type="password" name="confirm_password" value="" class="form-control" placeholder="Confirm Password"><br>
-                  <input type="file" name="profile_pic" value="" class="form-control"><br>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
@@ -61,9 +58,7 @@
         <tr>
           <th>Full Name</th>
           <th>User Name</th>
-          <th>Company Name</th>
           <th>Phone</th>
-          <th>Profile Pic</th>
           <th>Action</th>
         </tr>
         @if (count($users)>0)
@@ -72,8 +67,6 @@
           <td>{{$users[$i]['emp_name']}}</td>
           <td>{{$users[$i]['user_name']}}</td>
           <td>{{$users[$i]['phone']}}</td>
-          <td>{{$users[$i]['company_name']}}</td>
-          <td><img src="{{asset('uploads/'.$users[$i]['profile_pic'])}}" width="100px" height="100px"></td>
           <td>
             <a class="btn btn-warning btn-sm btn-block" href="/manage-user/edit/{{$users[$i]['emp_id']}}">Edit</a><br>
             <a class="btn btn-danger btn-sm btn-block" href="/manage-user/delete/{{$users[$i]['emp_id']}}">Delete</a>
@@ -89,5 +82,4 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="{{asset('js/userSearch.js')}}"></script>
 </body>
-
 </html>

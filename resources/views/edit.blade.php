@@ -20,7 +20,6 @@
                 @csrf
                 <input type="text" name="full_name" value="{{$user['emp_name']}}" class="form-control" placeholder="Full Name"><br>
                 <input type="number" name="phone" value="{{$user['phone']}}" class="form-control" placeholder="Phone"><br>
-                <input type="text" name="company_name" value="{{$user['company_name']}}" class="form-control" placeholder="Compnay Name"><br>
                 <button type="submit" class="btn btn-primary btn-block">Update</button>
             </form>
         </div>
