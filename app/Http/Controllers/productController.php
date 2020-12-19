@@ -66,17 +66,16 @@ class productController extends Controller
         }
     }
 
-    public function getUser(Request $req){
-        $user = $req->userName;
-        echo $user;
-        $user=User::where('emp_name','LIKE','%'.$req->userName.'%')
-        ->where('user_name','LIKE','%'.$req->userName.'%')
+    public function getProduct(Request $req){
+        $product = $req->productName;
+        echo $product;
+        $product=Product::where('name','LIKE','%'.$req->productName.'%')
         ->get()
         ->first();
         //echo "<script>alert($user);</script>";
         //$user = "Hello world";
         //return response()->json(['user'=>$user]);
         //return response()->json(array('user'=> $user), 200);
-        return $user;
+        return $product;
     }
 }
