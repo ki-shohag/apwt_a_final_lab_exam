@@ -26,6 +26,7 @@ Route::group(['middleware'=>['sess']], function () {
     Route::get('/manage-product', [productController::class, 'index']);
     Route::post('/manage-product/insert', [productController::class, 'storeProduct']);
     Route::get('/manage-product/edit/{id}', [productController::class, 'editProduct']);
+    Route::post('/manage-product/edit/{id}', [productController::class, 'updateProduct']);
 });
 Route::get('/signup', [signupController::class, 'index']);
 Route::post('/signup', [signupController::class, 'storeUser']);

@@ -38,16 +38,16 @@ class productController extends Controller
         return view('editProduct')->with('product', $product);
     }
 
-    public function updateUser(Request $req, $id)
+    public function updateProduct(Request $req, $id)
     {
-        $user = User::find($id);
-        echo $user;
-        $user->emp_name = $req->full_name;
-        $user->company_name = $req->company_name;
-        $user->phone = $req->phone;
-        if ($user->save()) {
-            $req->session()->flash('msg', 'User Updated!');
-            return redirect('/manage-user');
+        $product = product::find($id);
+        echo $product;
+        $product->name = $req->name;
+        $product->quantity = $req->quantity;
+        $product->price = $req->price;
+        if ($product->save()) {
+            $req->session()->flash('msg', 'Product Updated!');
+            return redirect('/manage-product');
         } else {
             return back();
         }

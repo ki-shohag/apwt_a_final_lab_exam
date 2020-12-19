@@ -15,7 +15,7 @@
         </div>
         <div class="col-5 text-center">
             <h5 class="text-danger"><i><b>{{session('msg')}}</b></i></h5><br>
-            <br><a href="/manage-Product" class="btn btn-success btn-sm float-left">Go Back</a><br><br>
+            <br><a href="/manage-product" class="btn btn-success btn-sm float-left">Go Back</a><br><br>
             <form class="text-center" action="/manage-product/edit/{{$product['id']}}" method="post">
                 @csrf
                 <input type="text" name="name" value="{{$product['name']}}" class="form-control" placeholder="Product Name"><br>
