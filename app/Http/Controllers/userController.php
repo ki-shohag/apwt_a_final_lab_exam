@@ -19,21 +19,16 @@ class userController extends Controller
     public function storeUser(Request $req)
     {
         
-            if ($req->hasFile('profile_pic')) {
-                $file = $req->file('profile_pic');
-                if ($file->move('uploads', $file->getClientOriginalName())) {
+            
                     if ($req->password == $req->confirm_password) {
                         $user = new User();
                         $user->emp_name = $req->full_name;
-                        $user->company_name = $req->company_name;
                         $user->user_name = $req->user_name;
-                        //$user->email = $req->email;
                         $user->phone = $req->phone;
                         $user->password = $req->password;
-                        $user->type = 2;
-                        $user->profile_pic = $file->getClientOriginalName();
+                        $user->type = 1;
                         if ($user->save()) {
-                            $req->session()->flash('msg', 'User Added!');
+                            $req->session()->flash('msg', 'Employee Added!');
                             return redirect('/manage-user');
                         } else {
                             return back();
@@ -42,14 +37,9 @@ class userController extends Controller
                         $req->session()->flash('msg', 'Passwords did not match!');
                         return redirect('/manage-user');
                     }
-                } else {
-                    return back();
+                
+            
                 }
-            } else {
-                $req->session()->flash('msg', 'Please select a profile picture!');
-                return redirect('/manage-user');
-            }
-    }
 
     public function editUser(Request $req, $id)
     {
@@ -62,7 +52,6 @@ class userController extends Controller
         $user = User::find($id);
         echo $user;
         $user->emp_name = $req->full_name;
-        $user->company_name = $req->company_name;
         $user->phone = $req->phone;
         if ($user->save()) {
             $req->session()->flash('msg', 'User Updated!');
